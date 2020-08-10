@@ -19,12 +19,12 @@ function staticLoadPlaces() {
 }
 
 var models = [
-  {
-      url: './assets/magnemite/scene.gltf',
-      scale: '0.5 0.5 0.5',
-      info: 'Look up',
-      rotation: '0 180 0',
-  },
+  // {
+  //     url: './assets/magnemite/scene.gltf',
+  //     scale: '0.5 0.5 0.5',
+  //     info: 'Look up',
+  //     rotation: '0 180 0',
+  // },
   {
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
@@ -32,6 +32,13 @@ var models = [
       position: '2 1 0',
       info: 'Trout',
   },
+  {
+    url: './assets/trout/scene.gltf',
+    scale: '0.7 0.7 0.7',
+    rotation: '180 180 0',
+    position: '1 1 0',
+    info: 'Trout',
+},
   {
       url: './assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
