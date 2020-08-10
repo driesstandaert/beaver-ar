@@ -29,7 +29,7 @@ var models = [
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
       rotation: '0 0 0',
-      position: '2 -1 0',
+      animation: 'property: position; to: 2 -1 0; dur: 2000; easing: linear; loop: true',
       info: 'Trout 1',
   },
   {
@@ -61,6 +61,10 @@ var setModel = function (model, entity) {
   if (model.position) {
       entity.setAttribute('position', model.position);
   }
+
+  if (model.position) {
+    entity.setAttribute('animation', model.animation);
+}
 
   entity.setAttribute('gltf-model', model.url);
 
