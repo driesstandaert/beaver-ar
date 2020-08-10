@@ -22,20 +22,20 @@ var models = [
   {
       url: './assets/magnemite/scene.gltf',
       scale: '0.5 0.5 0.5',
-      info: 'Magnemite, Lv. 5, HP 10/10',
+      info: 'Look up',
       rotation: '0 180 0',
   },
   {
       url: './assets/fish/scene.gltf',
-      scale: '0.01 0.01 0.01',
+      scale: '0.005 0.005 0.005',
       rotation: '0 180 0',
-      info: 'Articuno, Lv. 80, HP 100/100',
+      info: 'Fish',
   },
   {
       url: './assets/beaver/beaver.gltf',
-      scale: '0.01 0.01 0.01',
+      scale: '0.02 0.02 0.02',
       rotation: '0 180 0',
-      info: 'Dragonite, Lv. 99, HP 150/150',
+      info: 'Beaver',
   },
 ];
 
