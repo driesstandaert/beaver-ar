@@ -58,8 +58,11 @@ var setModel = function (model, entity) {
 
   entity.setAttribute('gltf-model', model.url);
 
+  const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+  console.log(distanceMsg);   // "890 meters" 
+
   const div = document.querySelector('.instructions');
-  div.innerText = model.info;
+  div.innerText = model.info + '' + distanceMsg;
 };
 
 function renderPlaces(places) {
