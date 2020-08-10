@@ -32,6 +32,12 @@ var models = [
     rotation: '0 180 0',
     position: '2 -1 0',
     info: 'Trout',
+  },
+  {
+      url: './assets/magnemite/scene.gltf',
+      scale: '0.4 0.4 0.4',
+      info: 'Look up',
+      rotation: '0 180 0',
   }
 ];
 
