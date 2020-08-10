@@ -27,13 +27,13 @@ var models = [
   },
   {
       url: './assets/fish/scene.gltf',
-      scale: '0.1 0.1 0.1',
+      scale: '0.01 0.01 0.01',
       rotation: '0 180 0',
       info: 'Articuno, Lv. 80, HP 100/100',
   },
   {
       url: './assets/beaver/beaver.gltf',
-      scale: '0.08 0.08 0.08',
+      scale: '0.01 0.01 0.01',
       rotation: '0 180 0',
       info: 'Dragonite, Lv. 99, HP 150/150',
   },
