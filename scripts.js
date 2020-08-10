@@ -42,8 +42,8 @@ var models = [
   {
       url: './assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
-      rotation: '0 180 0',
-      position: '3 0 -1',
+      rotation: '0 0 180',
+      position: '3 0 0',
       info: 'Beaver',
   },
 ];
