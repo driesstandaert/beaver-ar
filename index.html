@@ -32,12 +32,8 @@
     </a-assets>
     <a-entity gltf-model="#beaver" scale="0.01 0.01 0.01"></a-entity> -->
 
-      <a-assets>
-        <a-asset-item id="fish" src="assets/fish/scene.gltf" 
-        look-at="[gps-camera]"></a-asset-item>
-      </a-assets>
-      <a-entity gltf-model="#fish" scale="0.005 0.005 0.005" animation-mixer gps-entity-place="latitude: 51.621969; longitude: -0.177962;"></a-entity>
-
+      <a-entity gltf-model="assets/fish/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="latitude: 51.621969; longitude: -0.177962;" animation-mixer/>
+      
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
