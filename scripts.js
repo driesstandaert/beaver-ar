@@ -28,21 +28,22 @@ var models = [
   {
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
-      rotation: '0 180 0',
+      rotation: '0 0 0',
       position: '2 1 0',
       info: 'Trout',
   },
   {
     url: './assets/trout/scene.gltf',
     scale: '0.7 0.7 0.7',
-    rotation: '180 180 0',
-    position: '1 1 0',
+    rotation: '0 180 0',
+    position: '1 -1 0',
     info: 'Trout',
 },
   {
       url: './assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
-      rotation: '0 180 0',
+      rotation: '0 0 0',
+      position: '1 -1 0',
       info: 'Beaver',
   },
 ];
