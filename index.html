@@ -8,12 +8,12 @@
     <!-- <script src="https://unpkg.com/aframe-extras.animation-mixer@3.13.1/dist/aframe-extras.animation-mixer.min.js"></script> -->
     <script src="aframe-ar-nft.js"></script>
     <script>
-      window.onload = () => {                      
-        navigator.geolocation.getCurrentPosition((position) => {
-        document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
-        console.log(`latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
-      });
-     }
+    //   window.onload = () => {                      
+    //     navigator.geolocation.getCurrentPosition((position) => {
+    //     document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+    //     console.log(`latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+    //   });
+    //  }
      
      
     </script>
@@ -30,7 +30,7 @@
       <a-asset-item id="beaver" src="assets/beaver/beaver.gltf" 
       look-at="[gps-camera]"></a-asset-item>
     </a-assets> -->
-    <a-entity gltf-model="assets/beaver/beaver.gltf" scale="0.01 0.01 0.01"></a-entity>
+    <a-entity gltf-model="assets/beaver/beaver.gltf" scale="0.01 0.01 0.01" gps-entity-place="latitude: 51.621969; longitude: -0.177962;"></a-entity>
 
       <!-- <a-entity gltf-model="assets/fish/scene.gltf" rotation="0 180 0" scale="0.005 0.005 0.005" gps-entity-place="latitude: 51.621969; longitude: -0.177962;" animation-mixer/>
        -->
