@@ -8,7 +8,7 @@ window.onload = () => {
   const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
   console.log(distanceMsg);   // "890 meters" 
 
-  const test = document.querySelector('.test');
+  const test = document.querySelector('.distance');
   test.innerText = distanceMsg;
 };
 
