@@ -26,21 +26,21 @@ function staticLoadPlaces() {
 
 var models = [
   {
-    url: './assets/beaver/beaver.gltf',
+    url: '../assets/beaver/beaver.gltf',
     scale: '0.02 0.02 0.02',
     rotation: '0 250 0',
     position: '3 -1 0',
     info: 'Beaver',
   },
   {
-    url: './assets/trout/scene.gltf',
+    url: '../assets/trout/scene.gltf',
     scale: '0.5 0.5 0.5',
     rotation: '0 180 0',
     position: '2 -1 0',
     info: 'Trout',
   },
   {
-      url: './assets/magnemite/scene.gltf',
+      url: '../assets/magnemite/scene.gltf',
       scale: '0.4 0.4 0.4',
       info: 'Look up',
       rotation: '0 180 0',
