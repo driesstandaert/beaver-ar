@@ -11,8 +11,11 @@
       window.onload = () => {                      
         navigator.geolocation.getCurrentPosition((position) => {
         document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+        console.log(`latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
       });
      }
+     
+     
     </script>
   </head>
 
@@ -33,7 +36,7 @@
         <a-asset-item id="fish" src="assets/fish/scene.gltf" 
         look-at="[gps-camera]"></a-asset-item>
       </a-assets>
-      <a-entity gltf-model="#fish" scale="0.01 0.01 0.01" animation-mixer></a-entity>
+      <a-entity gltf-model="#fish" scale="0.005 0.005 0.005" animation-mixer></a-entity>
 
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
