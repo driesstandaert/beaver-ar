@@ -29,7 +29,7 @@ var models = [
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
       rotation: '0 0 0',
-      animation: 'property: position; to: 2 -1 0; dur: 2000; easing: linear; loop: true',
+      animation: 'property: rotation; to: 0 360 0; loop: true; dur: 10000',
       info: 'Trout 1',
   },
   {
@@ -42,7 +42,7 @@ var models = [
   {
       url: './assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
-      rotation: '0 90 0',
+      rotation: '0 270 0',
       position: '3 -1 0',
       info: 'Beaver',
   },
