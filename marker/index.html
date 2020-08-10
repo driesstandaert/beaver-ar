@@ -6,11 +6,21 @@
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
         <a-marker preset="hiro">
-            <a-entity
+
+            <!-- Marker on a flat surface -->
+            <!-- <a-entity
             position="0 0 1"
             rotation="270 0 0"
             scale="0.08 0.08 0.08"
             gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+            ></a-entity> -->
+
+            <!-- Marker against the wall -->
+            <a-entity
+            position="0 0 1"
+            rotation="270 0 0"
+            scale="0.08 0.08 0.08"
+            gltf-model="../assets/trout/scene.gltf"
             ></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
