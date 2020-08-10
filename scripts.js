@@ -26,18 +26,11 @@ var models = [
   //     rotation: '0 180 0',
   // },
   {
-      url: './assets/trout/scene.gltf',
-      scale: '0.5 0.5 0.5',
-      rotation: '0 0 0',
-      animation: 'property: rotation; to: 0 360 0; loop: true; dur: 10000',
-      info: 'Trout 1',
-  },
-  {
     url: './assets/trout/scene.gltf',
     scale: '0.5 0.5 0.5',
     rotation: '0 180 0',
     position: '2 -1 0',
-    info: 'Trout 2',
+    info: 'Trout',
 },
   {
       url: './assets/beaver/beaver.gltf',
