@@ -38,6 +38,7 @@ var models = [
       scale: '0.4 0.4 0.4',
       info: 'Look up',
       rotation: '0 180 0',
+      position: '2 1 0',
   }
 ];
 
