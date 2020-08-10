@@ -1,6 +1,6 @@
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
-  button.innerText = '﹖';
+  button.innerText = '';
 
   let places = staticLoadPlaces();
   renderPlaces(places);
@@ -9,7 +9,7 @@ window.onload = () => {
 function staticLoadPlaces() {
   return [
       {
-          name: 'Pokèmon',
+          name: 'creatures',
           location: {
               lat: 51.622060,
               lng: -0.177940,
@@ -35,7 +35,7 @@ var models = [
   {
       url: './assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
-      rotation: '0 270 0',
+      rotation: '0 250 0',
       position: '3 -1 0',
       info: 'Beaver',
   },
@@ -80,9 +80,9 @@ function renderPlaces(places) {
       model.setAttribute('animation-mixer', '');
 
       document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-          var entity = document.querySelector('[gps-entity-place]');
+          const entity = document.querySelector('[gps-entity-place]');
           modelIndex++;
-          var newIndex = modelIndex % models.length;
+          const newIndex = modelIndex % models.length;
           setModel(models[newIndex], entity);
       });
 
