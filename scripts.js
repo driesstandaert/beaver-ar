@@ -28,7 +28,7 @@ var models = [
   {
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
-      rotation: '0 0 0',
+      rotation: '0 180 0',
       info: 'Trout',
   },
   {
