@@ -22,30 +22,18 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- <a-assets>
-        <a-asset-item id="beaver" src="assets/Mesh_Beaver.gltf" 
+
+    <!-- <a-assets>
+      <a-asset-item id="beaver" src="assets/beaver/beaver.gltf" 
+      look-at="[gps-camera]"></a-asset-item>
+    </a-assets>
+    <a-entity gltf-model="#beaver" scale="0.01 0.01 0.01"></a-entity> -->
+
+      <a-assets>
+        <a-asset-item id="fish" src="assets/fish/scene.gltf" 
         look-at="[gps-camera]"></a-asset-item>
       </a-assets>
-      <a-entity gltf-model="#beaver" scale="0.01 0.01 0.01"></a-entity> -->
-
-
-      <!-- 
-Animation-mixer to animate models from clip name.
-use '*' for wildcard.
-clip names try:
-08_Sphere_bot_Bake_Pose
-07_Sphere_bot_Jump
-06_Sphere_bot_Run_Attack
-05_Sphere_bot_WalkCycle
-04_Sphere_bot_Attack
-03_Sphere_bot_Open
-02_Sphere_bot_Run_Cycle
-01_Sphere_bot_Roll
-
-      -->
- 
-      <a-entity cursor-listener gltf-model="#drone" animation-mixer="clip: 01_Sphere_bot_Roll; duration: AUTO; crossFadeDuration: 0" sphericalEnvMap="#pool" scale="1 1 1" material="roughness: 0; sphericalEnvMap: #pool; metalness: 0"  position="-1 0 -3" shadow="receive: true" rotation="0 0 0" samsung-logo>
-      </a-entity>
+      <a-entity gltf-model="#fish" scale="0.01 0.01 0.01" animation-mixer></a-entity>
 
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
