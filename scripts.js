@@ -26,10 +26,10 @@ var models = [
       rotation: '0 180 0',
   },
   {
-      url: './assets/fish/scene.gltf',
-      scale: '0.005 0.005 0.005',
+      url: './assets/trout/scene.gltf',
+      scale: '0.01 0.01 0.01',
       rotation: '0 180 0',
-      info: 'Fish',
+      info: 'Trout',
   },
   {
       url: './assets/beaver/beaver.gltf',
