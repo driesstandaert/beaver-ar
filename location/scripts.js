@@ -6,7 +6,7 @@ window.onload = () => {
   renderPlaces(places);
 
   const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-  console.log(distanceMsg);   // "890 meters" 
+  console.log(distanceMsg);   // "890 meters"
 
   const distance = document.querySelector('.distance');
   distance.innerText = distanceMsg;
@@ -72,8 +72,13 @@ function renderPlaces(places) {
   let scene = document.querySelector('a-scene');
 
   places.forEach((place) => {
-      let latitude = place.location.lat;
-      let longitude = place.location.lng;
+      // let latitude = place.location.lat;
+      // let longitude = place.location.lng;
+
+      let latitude = 51.6220518;
+      let longitude = -0.1779886;
+      console.log(latitude);
+      
 
       let model = document.createElement('a-entity');
       model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
