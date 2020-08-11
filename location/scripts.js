@@ -11,10 +11,10 @@ function staticLoadPlaces() {
       url: '../assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
       location: {
-        lat: 51.622540,
-        lng: -0.177321,
-        // lat: 51.6220518,
-        // lng: -0.1779886,
+        // lat: 51.622540,
+        // lng: -0.177321,
+        lat: 51.622246,
+        lng: -0.178072
       },
     },
     {
