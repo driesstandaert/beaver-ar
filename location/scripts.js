@@ -23,15 +23,6 @@ function staticLoadPlaces() {
         lng: -0.1779886,
       },
       scale: '0.5 0.5 0.5',
-    },
-    {
-      name: 'beaver',
-      url: '../assets/beaver/beaver.gltf',
-      location: {
-        lat: 51.62201,
-        lng: -0.17797,
-      },
-      scale: '0.02 0.02 0.02',
     }
   ];
 }
