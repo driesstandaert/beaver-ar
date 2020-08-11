@@ -10,6 +10,7 @@ function staticLoadPlaces() {
       name: 'beaver',
       url: '../assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
+      position: '0 -1 0',
       location: {
         // lat: 51.622540,
         // lng: -0.177321,
@@ -21,6 +22,7 @@ function staticLoadPlaces() {
       name: 'trout',
       url: '../assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
+      position: '0 -1 0',
       location: {
         lat: 51.6220518,
         lng: -0.1779886,
@@ -45,9 +47,7 @@ function renderPlaces(places) {
     model.setAttribute('rotation', '0 180 0');
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
-    // if (model.position) {
-    //   model.setAttribute('position', place.position);
-    // }
+    model.setAttribute('position', place.position);
 
     model.addEventListener('loaded', () => {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
