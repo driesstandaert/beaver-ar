@@ -13,7 +13,7 @@ function staticLoadPlaces() {
         lat: 51.622540,
         lng: -0.177321,
       },
-      scale: '0.5 0.5 0.5'
+      scale: '0.5 0.5 0.5',
     },
     {
       name: 'trout',
@@ -22,16 +22,16 @@ function staticLoadPlaces() {
         lat: 51.6220518,
         lng: -0.1779886,
       },
-      scale: '0.5 0.5 0.5'
+      scale: '0.5 0.5 0.5',
     },
     {
       name: 'beaver',
       url: '../assets/beaver/beaver.gltf',
       location: {
-        lat: 51.6220518,
-        lng: -0.1779886,
+        lat: 51.62201,
+        lng: -0.17797,
       },
-      scale: '0.02 0.02 0.02'
+      scale: '0.02 0.02 0.02',
     }
   ];
 }
@@ -42,7 +42,7 @@ function renderPlaces(places) {
   places.forEach((place) => {
     console.log(place.name);
     console.log(place.location.lat);
-    console.log(place.location.long);
+    console.log(place.location.lng);
 
 
     let model = document.createElement('a-entity');
