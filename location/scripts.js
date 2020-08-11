@@ -24,6 +24,9 @@ function staticLoadPlaces() {
   ];
 }
 
+// CORS Proxy to avoid CORS problems
+const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+
 var models = [
   {
     url: '../assets/beaver/beaver.gltf',
@@ -93,8 +96,8 @@ function renderPlaces(places) {
   });
 }
 
-AFRAME.registerComponent('listener', {
-  tick: function () {
-    console.log(this.el.getAttribute('position'));
-  }
-});
+// AFRAME.registerComponent('listener', {
+//   tick: function () {
+//     console.log(this.el.getAttribute('position'));
+//   }
+// });
