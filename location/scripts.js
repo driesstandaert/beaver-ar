@@ -22,11 +22,20 @@ function staticLoadPlaces() {
       url: '../assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
       location: {
+        lat: 51.621880,
+        lng: -0.177922,
+      },
+    },
+    {
+      name: 'mouse',
+      url: '../assets/mouse/scene.gltf',
+      scale: '0.5 0.5 0.5',
+      location: {
+        
         lat: 51.6220518,
         lng: -0.1779886,
       },
-      
-    }
+    },
   ];
 }
 
