@@ -56,12 +56,22 @@ function renderPlaces(places) {
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
 
+
+    let modelText = document.createElement('a-text');
+    modelText.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
+    modelText.setAttribute('value', `${place.name}`);
+    modelText.setAttribute('look-at', '[gps-camera]');
+
     model.addEventListener('loaded', () => {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
       console.log(model);
+      onsole.log(modelText);
     });
 
     scene.appendChild(model);
+    scene.appendChild(modelText);
+
+
 
     // const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
     // console.log(model);   // "890 meters"
