@@ -11,6 +11,7 @@ function staticLoadPlaces() {
       name: 'beaver',
       url: '../assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
+      textscale: '3 3 3',
       location: {
         // lat: 51.622540,
         // lng: -0.177321,
@@ -22,6 +23,7 @@ function staticLoadPlaces() {
       name: 'trout',
       url: '../assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
+      textscale: '3 3 3',
       location: {
         lat: 51.621880,
         lng: -0.177922,
@@ -31,8 +33,8 @@ function staticLoadPlaces() {
       name: 'mouse',
       url: '../assets/mouse/scene.gltf',
       scale: '0.01 0.01 0.01',
+      textscale: '3 3 3',
       location: {
-        
         lat: 51.6220518,
         lng: -0.1779886,
       },
@@ -61,6 +63,7 @@ function renderPlaces(places) {
     modelText.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
     modelText.setAttribute('value', `${place.name}`);
     modelText.setAttribute('look-at', '[gps-camera]');
+    modelText.setAttribute('scale', `${place.textscale}`);
 
     model.addEventListener('loaded', () => {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
