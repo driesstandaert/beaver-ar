@@ -8,6 +8,7 @@ function staticLoadPlaces() {
   return [
     {
       name: 'Magnemite',
+      url: '../assets/magnemite/scene.gltf',
       location: {
         lat: 51.622540,
         lng: -0.177321,
@@ -16,12 +17,24 @@ function staticLoadPlaces() {
     },
     {
       name: 'trout',
+      url: '../assets/trout/scene.gltf',
       location: {
         lat: 51.6220518,
         lng: -0.1779886,
       },
-      scale: '0.5 0.5 0.5'
+      scale: '0.5 0.5 0.5',
+      position: '0 -1 0',
     },
+    {
+      name: 'beaver',
+      url: '../assets/beaver/beaver.gltf',
+      location: {
+        lat: 51.6220518,
+        lng: -0.1779886,
+      },
+      scale: '0.5 0.5 0.5',
+      position: '0 -1 0',
+    }
   ];
 }
 
@@ -29,22 +42,22 @@ function renderPlaces(places) {
   let scene = document.querySelector('a-scene');
 
   places.forEach((place) => {
-    let latitude = place.location.lat;
-    let longitude = place.location.lng;
-    let testje = place.name;
-    console.log(testje);
-    console.log(latitude);
-    console.log(longitude);
+    console.log(place.name);
+    console.log(place.location.lat);
+    console.log(place.location.long);
 
 
     let model = document.createElement('a-entity');
-    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-    model.setAttribute('gltf-model', `../assets/${testje}/scene.gltf`);
+    model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
+    model.setAttribute('gltf-model', `${place.url}`);
     model.setAttribute('rotation', '0 180 0');
     model.setAttribute('animation-mixer', '');
 
     if (model.scale) {
       entity.setAttribute('scale', place.scale);
+    }
+    if (model.position) {
+      entity.setAttribute('position', place.position);
     }
 
     model.addEventListener('loaded', () => {
