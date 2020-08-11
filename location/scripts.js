@@ -29,7 +29,7 @@ function staticLoadPlaces() {
     {
       name: 'mouse',
       url: '../assets/mouse/scene.gltf',
-      scale: '0.1 0.1 0.1',
+      scale: '0.01 0.01 0.01',
       location: {
         
         lat: 51.6220518,
@@ -51,8 +51,7 @@ function renderPlaces(places) {
     let model = document.createElement('a-entity');
     model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
     model.setAttribute('gltf-model', `${place.url}`);
-    model.setAttribute('rotation', '0 135 0');
-    
+    model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
 
