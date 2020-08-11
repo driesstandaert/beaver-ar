@@ -32,7 +32,7 @@ function staticLoadPlaces() {
         lat: 51.6220518,
         lng: -0.1779886,
       },
-      scale: '0.5 0.5 0.5',
+      scale: '0.02 0.02 0.02',
       position: '0 -1 0',
     }
   ];
