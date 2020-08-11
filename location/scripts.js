@@ -54,10 +54,10 @@ function renderPlaces(places) {
     model.setAttribute('animation-mixer', '');
 
     if (model.scale) {
-      entity.setAttribute('scale', place.scale);
+      model.setAttribute('scale', place.scale);
     }
     if (model.position) {
-      entity.setAttribute('position', place.position);
+      model.setAttribute('position', place.position);
     }
 
     model.addEventListener('loaded', () => {
