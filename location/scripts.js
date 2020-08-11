@@ -40,10 +40,11 @@ function renderPlaces(places) {
 
 
     let model = document.createElement('a-entity');
+    model.setAttribute('position', '0 2 0');
     model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
     model.setAttribute('gltf-model', `${place.url}`);
     model.setAttribute('rotation', '0 135 0');
-    model.setAttribute('position', '0 2 0');
+    
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
 
