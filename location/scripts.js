@@ -54,6 +54,6 @@ function renderPlaces(places) {
     scene.appendChild(model);
 
     const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-    console.log(document.querySelector('[gps-entity-place]').getAttribute(gps-entity-place));   // "890 meters"
+    console.log(document.querySelector('[gps-entity-place]').getAttribute('gps-entity-place'));   // "890 meters"
   });
 }
