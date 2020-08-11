@@ -9,20 +9,21 @@ function staticLoadPlaces() {
     {
       name: 'beaver',
       url: '../assets/beaver/beaver.gltf',
+      scale: '0.005 0.005 0.005',
       location: {
         lat: 51.622540,
         lng: -0.177321,
       },
-      scale: '0.005 0.005 0.005',
     },
     {
       name: 'trout',
       url: '../assets/trout/scene.gltf',
+      scale: '0.5 0.5 0.5',
       location: {
         lat: 51.6220518,
         lng: -0.1779886,
       },
-      scale: '0.5 0.5 0.5',
+      
     }
   ];
 }
@@ -41,10 +42,7 @@ function renderPlaces(places) {
     model.setAttribute('gltf-model', `${place.url}`);
     model.setAttribute('rotation', '0 180 0');
     model.setAttribute('animation-mixer', '');
-
-    if (model.scale) {
-      model.setAttribute('scale', place.scale);
-    }
+    model.setAttribute('scale', place.scale);
     // if (model.position) {
     //   model.setAttribute('position', place.position);
     // }
