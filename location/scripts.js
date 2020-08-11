@@ -7,13 +7,13 @@ window.onload = () => {
 function staticLoadPlaces() {
   return [
     {
-      name: 'Magnemite',
-      url: '../assets/magnemite/scene.gltf',
+      name: 'beaver',
+      url: '../assets/beaver/beaver.gltf',
       location: {
         lat: 51.622540,
         lng: -0.177321,
       },
-      scale: '0.5 0.5 0.5',
+      scale: '0.01 0.01 0.01',
     },
     {
       name: 'trout',
