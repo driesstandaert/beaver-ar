@@ -29,16 +29,16 @@ function staticLoadPlaces() {
         lng: -0.177922,
       },
     },
-    {
-      name: 'mouse',
-      url: '../assets/mouse/scene.gltf',
-      scale: '0.01 0.01 0.01',
-      textscale: '3 3 3',
-      location: {
-        lat: 51.6220518,
-        lng: -0.1779886,
-      },
-    },
+    // {
+    //   name: 'mouse',
+    //   url: '../assets/mouse/scene.gltf',
+    //   scale: '0.01 0.01 0.01',
+    //   textscale: '3 3 3',
+    //   location: {
+    //     lat: 51.6220518,
+    //     lng: -0.1779886,
+    //   },
+    // },
   ];
 }
 
