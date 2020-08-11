@@ -9,7 +9,7 @@ function staticLoadPlaces() {
     {
       name: 'beaver',
       url: '../assets/beaver/beaver.gltf',
-      scale: '0.005 0.005 0.005',
+      scale: '0.02 0.02 0.02',
       location: {
         lat: 51.622540,
         lng: -0.177321,
