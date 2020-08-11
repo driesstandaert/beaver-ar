@@ -2,6 +2,7 @@ window.onload = () => {
   let places = staticLoadPlaces();
   renderPlaces(places);
   console.log(places);
+  console.log(model);
 };
 
 function staticLoadPlaces() {
