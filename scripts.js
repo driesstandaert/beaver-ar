@@ -11,8 +11,8 @@ function staticLoadPlaces() {
       {
           name: 'creatures',
           location: {
-              lat: '51.4779701',
-              lng: '-0.0849297',
+              lat: 51.4779701,
+              lng: -0.0849297,
           },
       },
   ];
