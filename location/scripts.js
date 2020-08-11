@@ -2,6 +2,8 @@ window.onload = () => {
   let places = staticLoadPlaces();
   renderPlaces(places);
   console.log(places);
+  const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+  console.log(distanceMsg);   // "890 meters"
 };
 
 function staticLoadPlaces() {
