@@ -29,7 +29,7 @@ function staticLoadPlaces() {
     {
       name: 'mouse',
       url: '../assets/mouse/scene.gltf',
-      scale: '0.5 0.5 0.5',
+      scale: '0.2 0.2 0.2',
       location: {
         
         lat: 51.6220518,
