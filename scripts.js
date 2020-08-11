@@ -11,8 +11,8 @@ function staticLoadPlaces() {
       {
           name: 'creatures',
           location: {
-              lat: 51.4779701,
-              lng: -0.0849297,
+              lat: '51.4779701',
+              lng: '-0.0849297',
           },
       },
   ];
@@ -24,21 +24,21 @@ var models = [
     scale: '0.02 0.02 0.02',
     rotation: '0 250 0',
     position: '3 -1 0',
-    info: 'Beaver',
+    info: 'Beaver'
   },
   {
     url: './assets/trout/scene.gltf',
     scale: '0.5 0.5 0.5',
     rotation: '0 180 0',
     position: '2 -1 0',
-    info: 'Trout',
+    info: 'Trout'
   },
   {
-      url: './assets/magnemite/scene.gltf',
-      scale: '0.4 0.4 0.4',
-      info: 'Look up',
-      rotation: '0 180 0',
-      position: '2 1 0',
+    url: './assets/magnemite/scene.gltf',
+    scale: '0.4 0.4 0.4',
+    rotation: '0 180 0',
+    position: '2 1 0',
+    info: 'Look up'
   }
 ];
 
