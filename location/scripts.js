@@ -13,7 +13,7 @@ function staticLoadPlaces() {
         lat: 51.622540,
         lng: -0.177321,
       },
-      scale: '0.01 0.01 0.01',
+      scale: '0.005 0.005 0.005',
     },
     {
       name: 'trout',
