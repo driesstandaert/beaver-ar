@@ -63,7 +63,7 @@ function renderPlaces(places) {
     modelText.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
     modelText.setAttribute('value', `${place.name}`);
     modelText.setAttribute('look-at', '[gps-camera]');
-    modelText.setAttribute('scale', `${place.textscale}`);
+    modelText.setAttribute('scale', place.textscale);
 
     model.addEventListener('loaded', () => {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
