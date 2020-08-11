@@ -13,8 +13,8 @@ function staticLoadPlaces() {
       location: {
         // lat: 51.622540,
         // lng: -0.177321,
-        lat: 51.478025,
-        lng: -0.084966
+        lat: 51.482651,
+        lng: -0.082687
       },
     },
     {
@@ -22,8 +22,10 @@ function staticLoadPlaces() {
       url: './assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
       location: {
-        lat: 51.4779701, // Paul Lat
-        lng: -0.0849297, // Paul Lng
+        // lat: 51.4779701, // Paul Lat
+        // lng: -0.0849297, // Paul Lng
+        lat: 51.485086, 
+        lng: -0.080385, 
       },
     },
     {
@@ -31,8 +33,8 @@ function staticLoadPlaces() {
       url: './assets/mouse/scene.gltf',
       scale: '0.01 0.01 0.01',
       location: {
-        lat: 51.477890,
-        lng: -0.085055,
+        lat: 51.483229,
+        lng: -0.078287,
       },
     },
   ];
