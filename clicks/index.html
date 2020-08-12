@@ -13,8 +13,7 @@
     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-                alert(el.getAttribute('id'))
-                
+                alert(this.el.getAttribute('id'))
             });
     }});
 </script>
