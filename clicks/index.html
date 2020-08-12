@@ -13,7 +13,8 @@
     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-                alert('Clicked!')
+                alert(el.getAttribute('id'))
+                
             });
     }});
 </script>
@@ -27,23 +28,23 @@
 		arjs='sourceType: webcam; debugUIEnabled: false;'>
 
         <a-box
-            clickhandler
-            material="color: red;"
-            scale="2 2 2"
-            gps-entity-place="latitude: 51.622246; longitude: -0.178072;" 
+          clickhandler
+          id="box"
+          material="color: red;"
+          scale="2 2 2"
+          gps-entity-place="latitude: 51.622246; longitude: -0.178072;" 
         >
         </a-box>
 
         <a-entity 
-        clickhandler
-      id="mousey"
-      gps-entity-place="latitude: 51.6220686; longitude: -0.1779559;" 
-      gltf-model="../assets/mouse/scene.gltf" 
-      animation-mixer="" 
-      scale="0.01 0.01 0.01"
-      
-      >
-      </a-entity>
+          clickhandler
+          id="mousey"
+          gps-entity-place="latitude: 51.6220686; longitude: -0.1779559;" 
+          gltf-model="../assets/mouse/scene.gltf" 
+          animation-mixer="" 
+          scale="0.01 0.01 0.01"
+        >
+        </a-entity>
 
         <a-camera gps-camera rotation-reader>
 		</a-camera>
