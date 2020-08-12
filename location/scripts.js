@@ -43,7 +43,7 @@ function staticLoadPlaces() {
     {
       name: 'brigde',
       url: '../assets/bridge/scene.gltf',
-      scale: '0 0 0',
+      scale: '1 1 1',
       textscale: '3 3 3',
       location: {
         lat: 51.621976,
