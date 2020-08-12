@@ -68,7 +68,7 @@ function renderPlaces(places) {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
     });
 
-    console.log(model.getAttribute('distance'));
+    console.log(model);
 
     scene.appendChild(model);
     scene.appendChild(modelText);
