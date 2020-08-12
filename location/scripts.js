@@ -41,7 +41,7 @@ function staticLoadPlaces() {
       },
     },
     {
-      name: 'brigde',
+      name: 'bridge',
       url: '../assets/bridge/scene.gltf',
       scale: '1 1 1',
       textscale: '3 3 3',
