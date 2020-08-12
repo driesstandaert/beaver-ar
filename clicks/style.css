@@ -22,6 +22,11 @@
   right: 0;
 }
 
+.c-icon {
+  background: red;
+  border-radius: 20px;
+}
+
 button {
   display: flex;
   align-items: center;

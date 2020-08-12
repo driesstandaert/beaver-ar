@@ -18,7 +18,7 @@
                 const modelName = this.el.getAttribute('name');
                 const div = document.querySelector('.js-label');
 
-                div.innerHTML += ` ${modelName}`;
+                div.innerHTML += `<span class="c-icon c-icon-${modelId}"> ${modelName}</span>`;
 
                 // Set visible false or display none does not work
                 // this.el.setAttribute('visible', 'false');
