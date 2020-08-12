@@ -61,8 +61,5 @@ function renderPlaces(places) {
     });
 
     scene.appendChild(model);
-
-    // const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-    // console.log(model);   // "890 meters"
   });
 }
