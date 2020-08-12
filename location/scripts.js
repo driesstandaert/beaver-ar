@@ -46,8 +46,8 @@ function staticLoadPlaces() {
       scale: '1 1 1',
       textscale: '3 3 3',
       location: {
-        lat: 51.621976,
-        lng: -0.177965,
+        lat: 51.621914,
+        lng: -0.178035,
       },
     },
   ];
