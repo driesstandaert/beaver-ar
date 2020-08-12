@@ -3,6 +3,7 @@ window.onload = () => {
   renderPlaces(places);
   console.log(places);
   console.log('test');
+  console.log(document.getElementById('trout').getAttribute('distance'));
 };
 
 function staticLoadPlaces() {
@@ -52,11 +53,13 @@ function renderPlaces(places) {
 
 
     let model = document.createElement('a-entity');
+    model.setAttribute('id', place.name);
     model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
     model.setAttribute('gltf-model', `${place.url}`);
     model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
+    
 
 
     let modelText = document.createElement('a-text');
@@ -68,7 +71,7 @@ function renderPlaces(places) {
       window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
     });
 
-    console.log(model.getAttribute('distanceMsg'));
+    
 
     scene.appendChild(model);
     scene.appendChild(modelText);
