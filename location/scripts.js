@@ -59,8 +59,7 @@ function renderPlaces(places) {
     model.setAttribute('rotation', '0 0 0');
     model.setAttribute('animation-mixer', '');
     model.setAttribute('scale', place.scale);
-    
-
+    model.setAttribute('clickhandler', '');
 
     let modelText = document.createElement('a-text');
     modelText.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
@@ -82,8 +81,3 @@ function renderPlaces(places) {
     // console.log(model);   // "890 meters"
   });
 }
-
-window.on('DOMNodeInserted', 'a-entity', function() {
-  console.log('DOMNodeInserted a-entity');
-  
-});
