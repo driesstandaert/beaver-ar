@@ -82,3 +82,8 @@ function renderPlaces(places) {
     // console.log(model);   // "890 meters"
   });
 }
+
+('html').on('DOMNodeInserted', 'a-entity', function() {
+  console.log('DOMNodeInserted a-entity');
+  
+});
