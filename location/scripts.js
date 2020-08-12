@@ -83,7 +83,7 @@ function renderPlaces(places) {
   });
 }
 
-('html').on('DOMNodeInserted', 'a-entity', function() {
+window.on('DOMNodeInserted', 'a-entity', function() {
   console.log('DOMNodeInserted a-entity');
   
 });
