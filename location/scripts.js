@@ -42,7 +42,7 @@ function staticLoadPlaces() {
     },
     {
       name: 'brigde',
-      url: '../assets/brodge/scene.gltf',
+      url: '../assets/bridge/scene.gltf',
       scale: '0 0 0',
       textscale: '3 3 3',
       location: {
