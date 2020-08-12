@@ -16,7 +16,12 @@
             this.el.addEventListener('click', () => {
                 const modelName = this.el.getAttribute('id');
                 const div = document.querySelector('.js-label');
-                div.innerText = modelName;
+                
+                if (div.innerText == '') {
+                  div.innerText = modelName;
+                } else {
+                  div.innerText.appendChild('' + modelName)
+                }
                 console.log(modelName);
             });
     }});
