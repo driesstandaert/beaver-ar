@@ -20,9 +20,11 @@
                 div.innerHTML += ` ${modelName}`;
 
                 this.el.setAttribute('visible', 'false');
-                this.el.style.display = "none";
+                // this.el.style.display = "none";
 
                 console.log(modelName);
+                console.log(this.el.getAttribute('distance'))
+                console.log(this.el.getAttribute('scale'))
             });
     }});
 </script>
