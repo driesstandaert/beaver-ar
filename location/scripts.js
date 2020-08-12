@@ -70,7 +70,7 @@ function renderPlaces(places) {
 
     console.log(model);
 
-    scene.appendChild(model);
+    scene.appendChild(model.getAttribute('distanceMsg'));
     scene.appendChild(modelText);
 
 
