@@ -15,7 +15,7 @@
         init: function() {
             this.el.addEventListener('click', () => {
                 const modelName = this.el.getAttribute('id');
-                const div = document.querySelector('.instructions');
+                const div = document.querySelector('.js-label');
                 div.innerText = modelName;
                 console.log(modelName);
             });
@@ -24,7 +24,7 @@
 
 <body style='margin: 0; overflow: hidden;'>
 
-  <div class="c-label is-centered"></div>
+  <div class="c-label js-label is-centered"></div>
 
   <a-scene
     cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
