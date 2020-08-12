@@ -3,7 +3,7 @@ window.onload = () => {
   renderPlaces(places);
   console.log(places);
   console.log('test');
-  console.log(document.getElementById('trout').getAttribute('distance'));
+  console.log(document.getElementById('trout'));
 };
 
 function staticLoadPlaces() {
