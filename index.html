@@ -16,6 +16,13 @@
               this.material.opacity = 0.3;
           }
         });
+        AFRAME.registerComponent('loading-box', {
+            init: function() {
+                this.el.addEventListener('model-loaded', e => {
+                    document.querySelector("#loadingEl").remove()
+                })
+            }
+        })
     </script>
 
     <body style="margin : 0px; overflow: hidden;">
@@ -42,6 +49,7 @@
             gltf-model="#trout"
             shadow="receive: true"
             animation-mixer
+            loading-box
             >
             </a-entity>
             <a-plane height="100" width="100" rotation="-90 0 0" shadow="receive: true" shadow-material></a-plane>
