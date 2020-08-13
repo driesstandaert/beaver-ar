@@ -8,7 +8,7 @@ function staticLoadPlaces() {
   return [
     {
       name: 'beaver',
-      url: './assets/beaver/beaver.gltf',
+      url: '../assets/beaver/beaver.gltf',
       scale: '0.02 0.02 0.02',
       location: {
         // lat: 51.622540,
@@ -19,7 +19,7 @@ function staticLoadPlaces() {
     },
     {
       name: 'trout',
-      url: './assets/trout/scene.gltf',
+      url: '../assets/trout/scene.gltf',
       scale: '0.5 0.5 0.5',
       location: {
         // lat: 51.4779701, // Paul Lat
@@ -30,7 +30,7 @@ function staticLoadPlaces() {
     },
     {
       name: 'mouse',
-      url: './assets/mouse/scene.gltf',
+      url: '../assets/mouse/scene.gltf',
       scale: '0.01 0.01 0.01',
       location: {
         lat: 51.483229,
