@@ -19,13 +19,13 @@
         });
 
         // Show loading box before model is loaded
-        AFRAME.registerComponent('box-loader', {
-            init: function() {
-                this.el.addEventListener('model-loaded', e => {
-                    document.querySelector("#loadingEl").remove()
-                })
-            }
-        })
+        // AFRAME.registerComponent('box-loader', {
+        //     init: function() {
+        //         this.el.addEventListener('model-loaded', e => {
+        //             document.querySelector("#loadingEl").remove()
+        //         })
+        //     }
+        // })
 
         window.onload=function(){
                 var sceneEl = document.querySelector('a-scene');
