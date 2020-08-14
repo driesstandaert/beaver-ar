@@ -7,6 +7,7 @@
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
     <script type="text/javascript">
         // Create shadow on transparent <a-plane>
         AFRAME.registerComponent('shadow-material', {
@@ -16,13 +17,36 @@
               this.material.opacity = 0.3;
           }
         });
-        AFRAME.registerComponent('loading-box', {
+
+        // Show loading box before model is loaded
+        AFRAME.registerComponent('box-loader', {
             init: function() {
                 this.el.addEventListener('model-loaded', e => {
                     document.querySelector("#loadingEl").remove()
                 })
             }
         })
+
+        window.onload=function(){
+                var sceneEl = document.querySelector('a-scene');
+                var entity = sceneEl.querySelector('a-entity');
+               
+                document.querySelector('.js-button').addEventListener('click', function () {
+                    console.log('click');
+
+                    if (entity.hasAttribute('animation')) {
+                        entity.emit('rotate');
+                    } else {
+                        entity.setAttribute('animation', 'property: rotation; from: 0 0 0; to: 0 360 0; loop: 1; dur: 2000; easing:linear; startEvents: rotate;')
+                        entity.emit('rotate');
+                    }
+                });
+
+                entity.addEventListener('animationcomplete', function(){ 
+                    this.removeAttribute('animation');
+                    this.flushToDOM() // Update the DOM
+                });
+            }
     </script>
 
     <body style="margin : 0px; overflow: hidden;">
@@ -36,7 +60,7 @@
 
         <a-assets>
             <a-asset-item id="trout" src="./assets/trout/scene.gltf"></a-asset-item>
-            <a-asset-item id="crocodile" src="./assets/crocodile/scene.gltf"></a-asset-item>
+            <!-- <a-asset-item id="crocodile" src="./assets/crocodile/scene.gltf"></a-asset-item> -->
         </a-assets>
 
         <!-- Trout -->
@@ -47,8 +71,9 @@
             scale="1 1 1"
             gltf-model="#trout"
             shadow="receive: true"
+            animation="property: rotation; to: 0 360 0; loop: 1; dur: 2000; easing:linear; startEvents: rotate;"
             animation-mixer
-            foo
+            box-loader
             >
             </a-entity>
             </a-entity>
@@ -57,7 +82,7 @@
 
 
         <!-- Crododile -->
-        <a-marker preset="hiro">
+        <!-- <a-marker preset="hiro">
             <a-box id='loadingEl' color="red" depth="0.1" height="0.1" width="0.1" animation="property: rotation; to: 0 360 0; loop: true; dur: 1000" ></a-box>
             <a-entity
             position="0 1 0"
@@ -70,10 +95,14 @@
             >
             </a-entity>
             <a-plane height="100" width="100" rotation="-90 0 0" shadow="receive: true" shadow-material></a-plane>
-        </a-marker>
+        </a-marker> -->
 
         <a-entity camera></a-entity>
 
         </a-scene>
+
+        <div class="c-controls">
+            <button data-action="change" class="js-button"></button>
+        </div>
     </body>
 </html>
