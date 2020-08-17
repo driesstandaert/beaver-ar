@@ -102,7 +102,7 @@ AFRAME.registerPrimitive('a-ocean-plane', {
 			color: '#8ab39f',
 			metalness: 1,
 			roughness: 0.2,
-			normalMap: 'url(https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/waternormals.jpg)',
+			normalMap: 'url(./textures/waternormals.jpg)',
 			normalTextureRepeat: '50 50',
 			normalTextureOffset: '0 0',
 			normalScale: '0.5 0.5',
