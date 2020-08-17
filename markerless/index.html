@@ -6,16 +6,31 @@
     <meta name="description" content="glTF Model - A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="scripts.js"></script>
-    <script src="shaders/sky.js"></script>
+    <!-- <script src="shaders/water.js"></script> -->
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: true">
       <a-assets>
-        <a-asset-item id="bievre" src="../assets/bievre/scene.gltf"></a-asset-item>
+        <a-asset-item id="bievre" src="../assets/bievre2/scene.gltf"></a-asset-item>
+        <img
+          id="water-normal"
+          src="./textures/waternormals.jpg"
+          crossorigin="anonymous"
+        />
+        <img
+          id="skysphere"
+          src="./textures/tears_of_steel_bridge_2k.jpg"
+          crossorigin="anonymous"
+        />
       </a-assets>
-      <a-entity id="sky" geometry="primitive: sphere; radius: 100" material="shader: sky; side: back" sun-position-setter hide-in-ar-mode>
+      <!-- <a-entity id="sky" geometry="primitive: sphere; radius: 100" material="shader: sky; side: back" sun-position-setter hide-in-ar-mode>
         <a-entity id="orbit" animation="property: rotation; to: 0 360 0; dur: 5000; loop: true; easing: linear"></a-entity>
-      </a-entity>
+      </a-entity> -->
+      <a-sky src="#skysphere" position="0 -1 0" rotation="0 0 0" hide-in-ar-mode></a-sky>
+
+      <a-ocean-plane
+        material="normalMap: #water-normal; sphericalEnvMap: #skysphere;"
+      ></a-ocean-plane>
       <a-entity gltf-model="#bievre" scale="16 16 16" position="0 0 -2" play-all-model-animations ></a-entity>
     </a-scene>
   </body>
