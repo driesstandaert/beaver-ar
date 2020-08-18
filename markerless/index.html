@@ -57,14 +57,21 @@
         box-loader 
         >
       </a-entity>
-      <a-entity 
-        gltf-model="#trout" 
+     
+      <a-entity rotation="0 0 0" 
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
+        animation__2="property: position; to: 1 -.5 0; loop: true; dur: 10000; easing: linear;"
+      >
+        <a-entity 
+        gltf-model="#trout"
+        rotation="0 200 0"
         scale="1 1 1" 
-        position="0 -.4 -5" 
+        position="5 -.5 0" 
         play-all-model-animations
         box-loader 
         >
       </a-entity>
+      </a-entity> 
       <div class="c-enter js-enter">
         <div id="myEnterARButton" class="c-enter-ar">
           <button class="c-enter-ar-button">AR</button>
