@@ -27,6 +27,7 @@
     >
       <a-assets>
         <a-asset-item id="bievre" src="../assets/bievre/scene.gltf"></a-asset-item>
+        <a-asset-item id="trout" src="../assets/trout/scene.gltf"></a-asset-item>
         <img
           id="water-normal"
           src="./textures/waternormals.jpg"
@@ -52,6 +53,14 @@
         gltf-model="#bievre" 
         scale="16 16 16" 
         position="0 0 0" 
+        play-all-model-animations
+        box-loader 
+        >
+      </a-entity>
+      <a-entity 
+        gltf-model="#trout" 
+        scale="1 1 1" 
+        position="0 -.4 -5" 
         play-all-model-animations
         box-loader 
         >
