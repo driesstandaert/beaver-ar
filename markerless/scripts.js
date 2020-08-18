@@ -98,7 +98,7 @@ AFRAME.registerPrimitive('a-ocean-plane', {
 			height: 10000,
 			width: 10000
 		},
-		rotation: '-90 0 0',
+    rotation: '-90 0 0',
 		material: {
 			shader: 'standard',
 			color: '#8ab39f',
@@ -121,12 +121,14 @@ AFRAME.registerComponent('box-loader', {
       this.el.addEventListener('model-loaded', e => {
           console.log('Model loaded!');
           const loader = document.querySelector(".js-loader")
+          const enter = document.querySelector(".js-enter")
           // const marker = document.querySelector("a-marker")
           // const label = document.querySelector(".js-label")
           // const controls = document.querySelector(".js-controls")
           setTimeout(
               function () {
                   loader.classList.remove('is-visible');
+                  enter.classList.add('is-visible')
                   
                   // if(marker.object3D.visible == true){
                   //     controls.classList.add('is-visible')
