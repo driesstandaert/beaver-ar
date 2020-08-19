@@ -7,7 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="scripts.js"></script>
-    <!-- <script src="shaders/water.js"></script> -->
     <link rel="stylesheet" type="text/css" href="./style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
@@ -19,9 +18,6 @@
     </svg>
     <span class="c-loader__instructions">Preparing your experience...</span>
   </div>
-  <!-- <div class="c-label js-label">Move your device over the marker</div> -->
-  <!-- vr-mode-ui="enabled: true"  -->
-  <!-- vr-mode-ui="enterVRButton: #myEnterVRButton; enterARButton: #myEnterARButton" -->
     <a-scene 
     vr-mode-ui="enterVRButton: #myEnterVRButton; enterARButton: #myEnterARButton"
       loading-screen="enabled: false"
@@ -29,7 +25,7 @@
       <a-assets>
         <a-asset-item id="bievre" src="../assets/bievre/scene.gltf"></a-asset-item>
         <a-asset-item id="trout" src="../assets/trout/scene.gltf"></a-asset-item>
-        <!-- <a-asset-item id="river" src="./textures/river.gltf"></a-asset-item> -->
+        <a-asset-item id="river" src="../assets/landscape/scene.gltf"></a-asset-item>
         <img
           id="water-normal"
           src="./textures/waternormals.jpg"
@@ -37,26 +33,20 @@
         />
         <img
           id="skysphere"
-          src="./textures/test-background-3.jpg"
+          src="./textures/bg-sky.jpg"
           crossorigin="anonymous"
         />
-        <!-- <video id="skysphere" preload="none" autoplay playsinline loop src="./textures/nice.mp4" crossOrigin="anonymous"></video> -->
-      </a-assets>
-      <!-- <a-entity id="sky" geometry="primitive: sphere; radius: 100" material="shader: sky; side: back" sun-position-setter hide-in-ar-mode>
-        <a-entity id="orbit" animation="property: rotation; to: 0 360 0; dur: 5000; loop: true; easing: linear"></a-entity>
-      </a-entity> -->
-      <!-- <a-videosphere class="js-videosphere" src="#skysphere" hide-in-ar-mode></a-videosphere> -->
+         </a-assets>
+         <a-ocean-plane
+         material="normalMap: #water-normal; sphericalEnvMap: #skysphere;"
+         position="0 0 0"
+         box-loader 
+       ></a-ocean-plane>
       <a-sky src="#skysphere" hide-in-ar-mode></a-sky>
-
-      <a-ocean-plane
-        material="normalMap: #water-normal; sphericalEnvMap: #skysphere;"
-        position="0 0 0"
-        box-loader 
-      ></a-ocean-plane>
       <a-entity 
         gltf-model="#bievre" 
-        scale="16 16 16" 
-        position="0 0 0" 
+        scale="1 1 1"
+        position="2 0 0"
         play-all-model-animations
         box-loader 
         >
@@ -70,12 +60,26 @@
         gltf-model="#trout"
         rotation="0 200 0"
         scale="1 1 1" 
-        position="5 -.5 0" 
+        position="2.5 -.5 0" 
         play-all-model-animations
         box-loader 
         >
         </a-entity>
       </a-entity> 
+
+      <a-entity 
+        gltf-model="#river" 
+        scale="50 50 50" 
+        position="0 0 0" 
+        rotation="0 0 0"
+        play-all-model-animations
+        box-loader 
+        >
+      </a-entity>
+
+      <a-light color="point" position="0 1 0"></a-light>
+
+
       <div class="c-enter js-enter">
         <div id="myEnterARButton" class="c-enter-ar">
           <button class="c-enter-ar-button">AR</button>
