@@ -45,14 +45,15 @@
       <a-sky src="#skysphere" hide-in-ar-mode></a-sky>
       
       <a-entity rotation="0 0 0" 
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear;"
         animation__2="property: position; to: 0 -1 0; loop:true; dur: 2000; easing: linear; dir:alternate;"
       >
         <a-entity 
           gltf-model="#bievre" 
           scale=".5 .5 .5"
           position="2 -1 -10"
-          rotation="0 -45 0"
+          rotation="-40 -45 0"
+          animation="property: rotation; to: 10 -45 0; loop:true; dur: 5000; easing: easeInQuad; dir:alternate;"
           play-all-model-animations
           box-loader 
           >
