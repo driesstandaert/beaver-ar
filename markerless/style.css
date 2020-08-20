@@ -14,7 +14,7 @@ body {
   justify-content: space-between;
   left: 0;
   right: 0;
-  z-index: 99999;
+  z-index: 1000;
   opacity: 0;
   transition: opacity .3s;
   max-width: 400px;
@@ -220,17 +220,15 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
+  z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity .3s;
+  visibility: hidden;
 }
 
 .c-loader.is-visible {
-  opacity: 1;
-  transition: opacity .3s;
+  visibility: visible;
 }
 
   .c-loader__svg {
@@ -308,7 +306,7 @@ body {
   top: 20px;
   display: flex;
   justify-content: flex-end;
-  z-index: 9999;
+  z-index: 1000;
   opacity: 0;
   transition: opacity .3s;
 }
@@ -323,10 +321,6 @@ body {
   font-weight: bold;
   width: 100%;
   line-height: 16px;
-}
-
-.c-enter-ar {
-  /* margin-right: 6px; */
 }
 
 .c-enter-vr {
@@ -395,7 +389,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
+  z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
