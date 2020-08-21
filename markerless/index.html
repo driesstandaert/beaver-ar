@@ -6,6 +6,7 @@
     <meta name="description" content="Bievre">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -20,8 +21,6 @@
         <a-asset-item id="bievre" src="../assets/bievre/scene.gltf"></a-asset-item>
         <a-asset-item id="trout" src="../assets/trout/scene.gltf"></a-asset-item>
         <a-asset-item id="landscape" src="../assets/landscape/scene.gltf"></a-asset-item>
-        <audio id="river-audio" src="./audio/river-audio.mp3" preload="auto"></audio>
-        <audio id="voiceover" src="./audio/voiceover-male.mp3" preload="auto"></audio>
         <img
           id="water-normal"
           src="./textures/waternormals.jpg"
@@ -95,10 +94,6 @@
 
       <!-- Camera -->
       <a-entity camera="active: true" look-controls position="0 1.6 0" camera-logger></a-entity>
-
-      <!-- Sound -->
-      <a-entity id="sound-river" sound="src: #river-audio;loop:true;volume:.5;"></a-entity>
-      <a-entity id="sound-voiceover" sound="src: #voiceover;loop:false;volume:1;" sound-ended></a-entity>
     
       <!-- AR/VR buttons -->
       <div class="c-enter js-enter">
@@ -152,7 +147,6 @@
         </div>
         <div class="c-overlay__links">
           <button class="c-button c-button--primary c-button--start js-start__button">Start</button>
-          <!-- <a href="" class="c-button c-button--secondary">About</a> -->
         </div>
       </div>
     </div>
@@ -166,7 +160,7 @@
           <p>Nous avons pour projet de creer ce type d’installation digital tout au long de la Bievre d’Arceuil à Paris, si vous voulez nous soutenir ou simplement suivre le projet vous pouvez nous laisser votre email:</p>
         </div>
         <div class="c-overlay__links">
-          <a href="" class="c-button c-button--primary">Email</a>
+          <a href="mailto:bonjour@paulpajot.com" class="c-button c-button--primary">Email</a>
           <a href="" class="c-button c-button--secondary">Instagram</a>
         </div>
       </div>

@@ -205,10 +205,6 @@ AFRAME.registerComponent('box-loader', {
 
 
 window.onload = function () {
-  var sceneEl = document.querySelector('a-scene');
-
-  var audioElRiver = sceneEl.querySelector('#sound-river');
-  var audioElVoiceover = sceneEl.querySelector('#sound-voiceover');
   var btnMute = document.querySelector('.js-mute__button');
   var btnPlay = document.querySelector('.js-play__button');
   var btnTranscript = document.querySelector('.js-transcript__button');
@@ -220,29 +216,26 @@ window.onload = function () {
   var btnStart = document.querySelector('.js-start__button');
   var landing = document.querySelector('.js-landing');
 
-  const model = sceneEl.querySelector("#bievre-model")
-
-  
-
   btnMute.addEventListener('click', function () {
     this.classList.toggle('is-muted');
     if (this.classList.contains('is-muted')) {
-      audioElRiver.setAttribute('sound', 'volume', 0)
-      audioElVoiceover.setAttribute('sound', 'volume', 0)
+      soundRiver.volume(0)
+      soundVoiceover.volume(0)
     } else {
-      audioElRiver.setAttribute('sound', 'volume', .5)
-      audioElVoiceover.setAttribute('sound', 'volume', 1)
+      soundRiver.volume(0.5)
+      soundVoiceover.volume(1)
     }
   });
 
   btnPlay.addEventListener('click', function () {
     this.classList.toggle('is-playing');
     if (this.classList.contains('is-playing')) {
-      audioElRiver.components.sound.playSound();
-      audioElVoiceover.components.sound.playSound();
+      soundRiver.play();
+      soundVoiceover.play();
+
     } else {
-      audioElRiver.components.sound.pauseSound();
-      audioElVoiceover.components.sound.pauseSound();
+      soundRiver.pause();
+      soundVoiceover.pause();
     }
   });
 
@@ -258,8 +251,8 @@ window.onload = function () {
   btnStart.addEventListener('click', function () {
     landing.classList.remove('is-visible'); 
     btnPlay.classList.add('is-playing');
-    audioElRiver.components.sound.playSound();
-    audioElVoiceover.components.sound.playSound();
+    soundRiver.play();
+    soundVoiceover.play();
   });
 }
 
@@ -270,12 +263,29 @@ AFRAME.registerComponent('sound-ended', {
           var sceneEl = document.querySelector('a-scene');
           var btnPlay = document.querySelector('.js-play__button');
           var overlay = document.querySelector('.js-overlay');
-          var audioElRiver = sceneEl.querySelector('#sound-river');
-          var audioElVoiceover = sceneEl.querySelector('#sound-voiceover');
           btnPlay.classList.remove('is-playing');
           overlay.classList.toggle('is-visible');
-          audioElRiver.components.sound.stopSound();
-          audioElVoiceover.components.sound.stopSound();
       })
   }
 })
+
+var soundVoiceover = new Howl({
+  src: ['./audio/voiceover-male.mp3'],
+  loop: false,
+  volume: 1,
+  html5: true, // Force to HTML5 so that the audio can stream in. Plays on IOS.
+  onend: function() {
+    console.log('Sound Finished!');
+    var btnPlay = document.querySelector('.js-play__button');
+    var overlay = document.querySelector('.js-overlay');
+    btnPlay.classList.remove('is-playing');
+    overlay.classList.toggle('is-visible');
+  }
+});
+
+var soundRiver = new Howl({
+  src: ['./audio/river-audio.mp3'],
+  html5: true, // Force to HTML5 so that the audio can stream in. Plays on IOS.
+  loop: true,
+  volume: 0.5
+});
