@@ -78,9 +78,9 @@ AFRAME.registerPrimitive('a-ocean-plane', {
     rotation: '-90 0 0',
 		material: {
 			shader: 'standard',
-			color: '#8ab39f',
+			color: '#A3D3D5',
 			metalness: 1,
-			roughness: 0.2,
+			roughness: 0.1,
 			normalMap: 'url(./waternormals.jpg)',
 			normalTextureRepeat: '50 50',
 			normalTextureOffset: '0 0',
@@ -248,7 +248,7 @@ window.onload = function () {
 
   btnClose.addEventListener('click', function () {
     overlay.classList.toggle('is-visible');
-    soundRiver.sound.fade(.1, 1, 1000);
+    //soundRiver.sound.fade(.1, 1, 1000);
   });
   
 
@@ -259,7 +259,6 @@ window.onload = function () {
     soundVoiceover.play();
     loadinganime = false; // intro animation until scene starts
   });
-
 
 
     /////////////////
