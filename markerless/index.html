@@ -47,13 +47,18 @@
        >
       </a-ocean-plane>
 
+
+      <!-- <a-ocean></a-ocean> -->
+
       <!-- Sky background -->
       <a-sky src="#skysphere" hide-in-ar-mode></a-sky>
 
       <!-- animation__2="property: position; to: 0 0 0; loop:true; dur: 2000; easing: linear; dir:alternate;" -->
 
       <!-- Beaver -->
-      <a-entity rotation="0 0 0" 
+      <a-entity 
+        rotation="0 0 0"
+        position="0 0 -10"  
         animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear;"
       >
       <a-entity 
@@ -80,13 +85,15 @@
     </a-entity> -->
 
       <!-- trout -->
-      <a-entity rotation="0 0 0" 
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
-        animation__2="property: position; to: 0 -1 0; loop:true; dur: 10000; easing: linear; dir:alternate;"
+      <a-entity 
+        rotation="0 0 0" 
+        position="0 0 -5" 
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear; dir:reverse;"
+        animation__2="property: position; to: 0 -1 -5; loop:true; dur: 10000; easing: linear; dir:alternate;"
       >
         <a-entity 
         gltf-model="#trout"
-        rotation="0 200 0"
+        rotation="0 20 0"
         scale=".5 .5 .5" 
         position="2 -.25 0" 
         play-all-model-animations
@@ -99,7 +106,7 @@
       <a-entity 
         gltf-model="#landscape" 
         scale="1 1 1" 
-        position="0 -5.5 0"
+        position="0 -5.5 -10"
         rotation="0 180 0"
         play-all-model-animations
         box-loader 
@@ -110,7 +117,7 @@
       <a-entity 
         gltf-model="#bridge" 
         scale="1 1 1" 
-        position="2 0 1" 
+        position="2 -5.5 -9" 
         rotation="0 0 0"
         play-all-model-animations
         box-loader 
@@ -118,10 +125,10 @@
       </a-entity>
 
       <!-- Light -->
-      <a-light position="0 5 0"></a-light>
+      <a-light position="0 10 0"></a-light>
 
       <!-- Camera -->
-      <a-entity camera="active: true" look-controls position="0 4 10" camera-logger></a-entity>
+      <a-entity camera="active: true" look-controls position="0 3 0" camera-logger></a-entity>
     
       <!-- AR/VR buttons -->
       <div class="c-enter js-enter">
