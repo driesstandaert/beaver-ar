@@ -194,23 +194,23 @@ AFRAME.registerPrimitive('a-ocean-plane', {
 // Loading screen before model is loaded
 ////////////////////////////////////////
 
-AFRAME.registerComponent('box-loader', {
-  init: function () {
-      this.el.addEventListener('model-loaded', e => {
-          console.log('Model loaded!');
-          const loader = document.querySelector(".js-loader")
-          const enter = document.querySelector(".js-enter")
-          const controls = document.querySelector(".js-controls")
-          setTimeout(
-              function () {
-                  loader.classList.remove('is-visible');
-                  enter.classList.add('is-visible')
-                  controls.classList.add('is-visible')
-              }, 1000
-          );
-      })
-  }
-})
+// AFRAME.registerComponent('box-loader', {
+//   init: function () {
+//       this.el.addEventListener('model-loaded', e => {
+//           console.log('Model loaded!');
+//           const loader = document.querySelector(".js-loader")
+//           const enter = document.querySelector(".js-enter")
+//           const controls = document.querySelector(".js-controls")
+//           setTimeout(
+//               function () {
+//                   loader.classList.remove('is-visible');
+//                   enter.classList.add('is-visible')
+//                   controls.classList.add('is-visible')
+//               }, 1000
+//           );
+//       })
+//   }
+// })
 
 
 
@@ -304,6 +304,7 @@ AFRAME.registerComponent('box-loader', {
 
 
 window.onload = function () {
+  var scene = document.querySelector('a-scene');
   var btnMute = document.querySelector('.js-mute__button');
   var btnPlay = document.querySelector('.js-play__button');
   var btnTranscript = document.querySelector('.js-transcript__button');
@@ -349,36 +350,62 @@ window.onload = function () {
     overlay.classList.toggle('is-visible');
     //soundRiver.sound.fade(.1, 1, 1000);
   });
-  
 
   btnStart.addEventListener('click', function () {
     landing.classList.remove('is-visible'); 
     btnPlay.classList.add('is-playing');
-    soundRiver.play();
-    soundVoiceover.play();
     loadinganime = false; // intro animation until scene starts
+    function playSound () {
+      soundRiver.play();
+      soundVoiceover.play();
+    }
+    setTimeout(
+      function () {
+        (scene.hasLoaded) ? playSound() : scene.addEventListener('loaded', playSound);
+      }, 1000
+    );
   });
 
+  ////////////////////////////
+  // Start scene after loading
+  ////////////////////////////
 
-    /////////////////
-    // Logo animation
-    /////////////////
+  (scene.hasLoaded) ? startScene() : scene.addEventListener('loaded', startScene);
 
-    function timer(ms) {
-      return new Promise(res => setTimeout(res, ms));
+  function startScene () {
+    console.log('Models loaded!');
+    const loader = document.querySelector(".js-loader");
+    const enter = document.querySelector(".js-enter");
+    const controls = document.querySelector(".js-controls");
+    setTimeout(
+      function () {
+        loader.classList.remove('is-visible');
+        enter.classList.add('is-visible');
+        controls.classList.add('is-visible');
+      }, 1000
+    );
+  }
+
+
+  /////////////////
+  // Logo animation
+  /////////////////
+
+  function timer(ms) {
+    return new Promise(res => setTimeout(res, ms));
+  }
+  
+  const logoSvgCircles = document.querySelectorAll(".js-logo circle");
+  let loadinganime = true;
+
+  async function introAnimation () {
+  while (loadinganime) {
+      var el = Math.floor(Math.random() * logoSvgCircles.length);
+      logoSvgCircles[el].classList.toggle("is-visible");
+      await timer(5);
     }
-    
-    const logoSvgCircles = document.querySelectorAll(".js-logo circle");
-    let loadinganime = true;
-
-    async function introAnimation () {
-    while (loadinganime) {
-        var el = Math.floor(Math.random() * logoSvgCircles.length);
-        logoSvgCircles[el].classList.toggle("is-visible");
-        await timer(5);
-      }
-    }
-    introAnimation();
+  }
+  introAnimation();
 
 }
 
@@ -424,6 +451,15 @@ var soundRiver = new Howl({
 });
 
 
+
+// AFRAME.registerComponent("rotate-compass", {
+//   init: function() {
+//       var compassdir // however you get the compass reading
+//       var pos = this.el.getAttribute('position')
+//       pos.y = THREE.Math.degToRad(-compassdir);
+//       this.el.setAttribute('position', pos)
+//   }
+// })
 
 
 
