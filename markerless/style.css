@@ -34,11 +34,12 @@ body {
 }
 
 .c-controls__mute {
-  padding: 10px 0 20px 10px;
+  padding: 16px 0 20px 10px;
 }
 
 .c-controls__mute.is-muted {
   box-shadow: inset 0px -3px 0px 0px #ECCAB8;
+  background: rgba(255,255,255,.1);
 }
 
 .c-controls__mute.is-muted span:before {
@@ -92,7 +93,7 @@ body {
 }
 
 .c-controls__play {
-  padding: 10px 0 10px 10px;
+  padding: 10px 0 10px 16px;
   margin-bottom: 20px;
 }
 .c-play__button {
@@ -134,13 +135,13 @@ body {
 .c-transcript {
   position: absolute;
   max-width: 400px;
-  max-height: 160px;
+  max-height: 210px;
   overflow-y: scroll;
   z-index: 1000;
   font-family: 'Montserrat', sans-serif;
   font-size: .875em;
   color: #fff;
-  bottom: 90px;
+  bottom: 100px;
   padding: 0 10px;
   opacity: 0;
   transition: 300ms opacity ease;
@@ -157,11 +158,12 @@ body {
 }
 
 .c-controls__transcript {
-  padding: 12px 10px 26px;
+  padding: 18px 0 26px;
 }
 
 .c-controls__transcript.is-active {
   box-shadow: inset 0px -3px 0px 0px #ECCAB8;
+  background: rgba(255,255,255,.1);
 }
 
 .c-transcript__button {
