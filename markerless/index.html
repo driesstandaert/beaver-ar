@@ -111,13 +111,13 @@
         play-all-model-animations
         box-loader
         >
-        <!-- <a-light type="point" color="white" position="0 2 0" distance="10" angle="0"></a-light>
+        <a-light type="point" color="white" position="0 2 0" distance="10" angle="0"></a-light>
         <a-light type="point" color="white" position="0 -.25 -1" distance="4" angle="180"></a-light>
         <a-light type="point" color="white" position="-1 -.25 0" distance="4" angle="180"></a-light>
         <a-light type="point" color="white" position="1 -.25 0" distance="4" angle="180"></a-light>
-        <a-light type="point" color="white" position="0.217 0.393 -2.003" distance="4" angle="180"></a-light> -->
-        <a-light type="point" color="white" position="1.207 1.741 -1.269" distance="10" angle="0"></a-light>
-        <a-light type="point" color="white" position="0 -.25 -1" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="0.217 0.393 -2.003" distance="4" angle="180"></a-light>
+        <!-- <a-light type="point" color="white" position="1.207 1.741 -1.269" distance="10" angle="0"></a-light>
+        <a-light type="point" color="white" position="0 -.25 -1" distance="4" angle="180"></a-light> -->
       </a-entity>
       
       </a-entity> 
@@ -158,57 +158,57 @@
         </a-entity>
       </a-entity>   
       
-       <!-- sticks -->
-       <a-entity 
-       rotation="0 0 0" 
-       position="4 0 40" 
-       animation__1="property: position; to: 16 0 -40; loop:true; dur: 40000; easing: linear;"
-     >
-       <a-entity 
-       gltf-model="#stick"
-       rotation="0 0 0"
-       scale=".3 .3 .3" 
-       position="2 0 0" 
-       play-all-model-animations
-       box-loader
-       >
-       </a-entity>
-     </a-entity>
+      <!-- sticks -->
+      <a-entity 
+        rotation="0 0 0" 
+        position="4 0 40" 
+        animation__1="property: position; to: 16 0 -40; loop:true; dur: 40000; easing: linear;"
+      >
+        <a-entity 
+        gltf-model="#stick"
+        rotation="0 0 0"
+        scale=".3 .3 .3" 
+        position="2 0 0" 
+        play-all-model-animations
+        box-loader
+        >
+        </a-entity>
+      </a-entity>
 
-     <!-- sticks -->
-     <a-entity 
-       rotation="0 0 0" 
-       position="1 0 40" 
-       animation__1="property: position; to: 14 0 -40; loop:true; dur: 40000; easing: linear; delay:7000;"
-     >
-       <a-entity 
-       gltf-model="#stick2"
-       rotation="0 0 0"
-       scale=".1 .1 .1" 
-       position="0 0 0" 
-       play-all-model-animations
-       box-loader
-       >
-       </a-entity>
-     </a-entity> 
+      <!-- sticks -->
+      <a-entity 
+        rotation="0 0 0" 
+        position="1 0 40" 
+        animation__1="property: position; to: 14 0 -40; loop:true; dur: 40000; easing: linear; delay:7000;"
+      >
+        <a-entity 
+        gltf-model="#stick2"
+        rotation="0 0 0"
+        scale=".1 .1 .1" 
+        position="0 0 0" 
+        play-all-model-animations
+        box-loader
+        >
+        </a-entity>
+      </a-entity> 
 
-     <!-- sticks -->
-     <a-entity 
-       rotation="0 0 0" 
-       position="5 0 40" 
-       animation__1="property: position; to: 16 0 -40; loop:true; dur: 40000; easing: linear;delay:20000"
-       animation__2="property: rotation; to: 0 360 0; loop: true; dur: 40000; easing: linear; dir:reverse;delay:20000"
-     >
-       <a-entity 
-       gltf-model="#stick"
-       rotation="0 90 0"
-       scale=".2 .2 .2" 
-       position="2 0 0" 
-       play-all-model-animations
-       box-loader
-       >
-       </a-entity>
-     </a-entity>
+      <!-- sticks -->
+      <a-entity 
+        rotation="0 0 0" 
+        position="5 0 40" 
+        animation__1="property: position; to: 16 0 -40; loop:true; dur: 40000; easing: linear;delay:20000"
+        animation__2="property: rotation; to: 0 360 0; loop: true; dur: 40000; easing: linear; dir:reverse;delay:20000"
+      >
+        <a-entity 
+        gltf-model="#stick"
+        rotation="0 90 0"
+        scale=".2 .2 .2" 
+        position="2 0 0" 
+        play-all-model-animations
+        box-loader
+        >
+        </a-entity>
+      </a-entity>
 
       <!-- Landscape -->
       <a-entity 
@@ -218,6 +218,7 @@
         rotation="0 180 0"
         play-all-model-animations
         box-loader 
+        hide-in-ar-mode
         >
       </a-entity>
 
@@ -229,6 +230,7 @@
         rotation="0 0 0"
         play-all-model-animations
         box-loader 
+        hide-in-ar-mode
         >
       </a-entity>
 
@@ -252,8 +254,8 @@
 
     <!-- Audio controls -->
     <div class="c-controls js-controls">
-      <div class="c-controls__mute">
-        <button class="c-mute__button js-mute__button"><span></span></button>
+      <div class="c-controls__mute js-mute__button">
+        <button class="c-mute__button"><span></span></button>
       </div>
       <div class="c-controls__play">
         <button class="c-play__button js-play__button"></button>

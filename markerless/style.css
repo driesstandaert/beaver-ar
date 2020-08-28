@@ -36,6 +36,16 @@ body {
 .c-controls__mute {
   padding: 10px 0 20px 10px;
 }
+
+.c-controls__mute.is-muted {
+  box-shadow: inset 0px -3px 0px 0px #ECCAB8;
+}
+
+.c-controls__mute.is-muted span:before {
+  transform: scale(0.5) translate(-15px, 0) rotate(36deg);
+  opacity: 0;
+}
+
 .c-mute__button {
   border: 0;
   background: transparent;
@@ -79,13 +89,6 @@ body {
   left: 18px;
   top: 9px;
   transition: all 0.2s ease-out;
-}
-.c-mute__button:hover span:before {
-  transform: scale(0.8) translate(-3px, 0) rotate(42deg);
-}
-.c-mute__button.is-muted span:before {
-  transform: scale(0.5) translate(-15px, 0) rotate(36deg);
-  opacity: 0;
 }
 
 .c-controls__play {
@@ -515,6 +518,10 @@ circle {
 circle.is-visible {
   opacity: 1;
   transition: opacity .3s ease;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
