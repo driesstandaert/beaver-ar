@@ -447,7 +447,7 @@ var soundRiver = new Howl({
   src: ['./audio/river-audio.mp3'],
   html5: true, // Force to HTML5 so that the audio can stream in. Plays on IOS.
   loop: true,
-  volume: .2
+  volume: .1
 });
 
 
