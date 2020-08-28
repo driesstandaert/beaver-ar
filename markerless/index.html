@@ -8,6 +8,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="scripts.js"></script>
+    <script src="glow.js"></script>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
     <link rel="icon" type="image/png" href="./images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -87,10 +88,10 @@
 
       <a-entity 
         rotation="0 0 0"
-        position="14 0 -30"  
-        animation="property: position; to: -10 0 100; loop: true; dur: 157000; easing: linear;"
+        position="14 -.75 -30"  
+        animation="property: position; to: -14 -.75 100; loop: true; dur: 157000; easing: linear;"
       >
-      <a-entity 
+      <!-- <a-entity 
         id="bievre-model"
         gltf-model="#bievre" 
         scale="2 2 2"
@@ -99,9 +100,43 @@
         play-all-model-animations
         box-loader
         >
+        <a-light type="point" color="blue" position="0 0 0" distance="5"></a-light>
+      </a-entity> -->
+      <a-entity 
+        id="bievre-model"
+        gltf-model="#bievre" 
+        scale="2 2 2"
+        position="0 0 0"
+        rotation="15 150 0"
+        play-all-model-animations
+        box-loader
+        >
+        <a-light type="point" color="white" position="0 2 0" distance="10" angle="0"></a-light>
+        <a-light type="point" color="white" position="0 -.25 -1" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="-1 -.25 0" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="1 -.25 0" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="0.217 0.393 -2.003" distance="4" angle="180"></a-light>
       </a-entity>
+      
       </a-entity> 
 
+      <!-- <a-entity 
+        id="bievre-model"
+        gltf-model="#bievre" 
+        scale="2 2 2"
+        position="7 -.25 -5"
+        rotation="15 150 0"
+        play-all-model-animations
+        box-loader
+        >
+        <a-light type="point" color="white" position="0 2 0" distance="10" angle="0"></a-light>
+        <a-light type="point" color="white" position="0 -.25 -1" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="-1 -.25 0" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="1 -.25 0" distance="4" angle="180"></a-light>
+        <a-light type="point" color="white" position="0.217 0.393 -2.003" distance="4" angle="180"></a-light>
+      </a-entity> -->
+
+      <!-- <a-sphere glow="enabled:true; scale:1.3" position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere> -->
 
       <!-- trout -->
       <a-entity 
