@@ -413,11 +413,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s linear;
 }
 
 .c-overlay.is-visible {
   visibility: visible;
+  opacity: 1;
+  transition: all .3s linear;
 }
 
   .c-overlay__content {
@@ -432,6 +436,11 @@ body {
     color: #ECCAB8;
     display: block;
     margin: 0 auto;
+  }
+
+  .c-overlay__content.is-hidden {
+    opacity: 0;
+    transition: all .3s linear;
   }
 
   .c-close__button {
@@ -510,7 +519,6 @@ body {
 .c-button--start {
   -webkit-tap-highlight-color: transparent;
 }
-
 
 circle {
   opacity: 0;

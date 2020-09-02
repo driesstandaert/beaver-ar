@@ -42,14 +42,28 @@ AFRAME.registerComponent('hide-in-ar-mode', {
       this.el.sceneEl.addEventListener('enter-vr', (ev) => {
           this.wasVisible = this.el.getAttribute('visible');
           if (this.el.sceneEl.is('ar-mode')) {
-              this.el.setAttribute('material', 'opacity: 0.2; transparent: true');
               this.el.setAttribute('visible', false);
           }
       });
       this.el.sceneEl.addEventListener('exit-vr', (ev) => {
           if (this.wasVisible) this.el.setAttribute('visible', true);
-          this.el.setAttribute('material', 'opacity: 1; transparent: false');  
           this.el.setAttribute('visible', true);        
+      });
+  }
+});
+
+AFRAME.registerComponent('transparent-in-ar-mode', {
+  // Set this object semi transparent while in AR mode. Only images
+  init: function () {
+      this.el.sceneEl.addEventListener('enter-vr', (ev) => {
+          this.wasVisible = this.el.getAttribute('visible');
+          if (this.el.sceneEl.is('ar-mode')) {
+              this.el.setAttribute('material', 'opacity: 0.2; transparent: true');
+          }
+      });
+      this.el.sceneEl.addEventListener('exit-vr', (ev) => {
+          if (this.wasVisible) this.el.setAttribute('visible', true);
+          this.el.setAttribute('material', 'opacity: 1; transparent: true');      
       });
   }
 });
@@ -87,7 +101,7 @@ AFRAME.registerPrimitive('a-ocean-plane', {
 			normalTextureRepeat: '50 50',
 			normalTextureOffset: '0 0',
 			normalScale: '0.5 0.5',
-			opacity: 0.6
+			opacity: 0 // Start opacity 0. See animation on Start event.
 		},
 		'wobble-normal': {}
 	},
@@ -367,6 +381,10 @@ AFRAME.registerComponent('model-opacity', {
 
 window.onload = function () {
   var scene = document.querySelector('a-scene');
+  var sky = document.querySelector('.js-sky');
+  var ocean = document.querySelector('a-ocean-plane');
+  var light = document.querySelector('.js-light');
+
   var btnMute = document.querySelector('.js-mute__button');
   var btnPlay = document.querySelector('.js-play__button');
   var btnTranscript = document.querySelector('.js-transcript__button');
@@ -377,6 +395,7 @@ window.onload = function () {
 
   var btnStart = document.querySelector('.js-start__button');
   var landing = document.querySelector('.js-landing');
+  var landingContent = document.querySelector('.js-landing-content');
 
   btnMute.addEventListener('click', function () {
     this.classList.toggle('is-muted');
@@ -414,18 +433,36 @@ window.onload = function () {
   });
 
   btnStart.addEventListener('click', function () {
-    landing.classList.remove('is-visible'); 
+    
+    landingContent.classList.add('is-hidden');
     btnPlay.classList.add('is-playing');
     loadinganime = false; // intro animation until scene starts
     function playSound () {
-      soundRiver.play();
+      var id1 = soundRiver.play();
+      soundRiver.fade(0, .1, 2000, id1);
+      //soundRiver.play();
       soundVoiceover.play();
     }
+    function fadeInScene () {
+      sky.setAttribute('animation__fadein', 'property: material.opacity; from: 1; to: 0; dur: 4000; delay:0');
+      light.setAttribute('animation', 'property: light.intensity; to: 1; dur: 2000; easing: linear; delay:0');
+      ocean.setAttribute('animation', 'property: material.opacity; from: 0; to: .6; dur: 2000; delay:0');
+    }
+
     setTimeout(
       function () {
-        (scene.hasLoaded) ? playSound() : scene.addEventListener('loaded', playSound);
+        // (scene.hasLoaded) ? playSound() : scene.addEventListener('loaded', playSound);
+        if (scene.hasLoaded) {
+          playSound();
+          fadeInScene();
+        } else {
+          scene.addEventListener('loaded', playSound);
+          scene.addEventListener('loaded', fadeInScene);
+        }
+        landing.classList.remove('is-visible');
       }, 1000
     );
+    
   });
 
   ////////////////////////////
@@ -522,6 +559,24 @@ var soundRiver = new Howl({
 //       this.el.setAttribute('position', pos)
 //   }
 // })
+
+
+// component definition 
+AFRAME.registerComponent('foo', {
+
+  // this is called upon initialisation
+  init: function() {
+
+     // grab all the domino pieces
+     var sky = document.getElementsByClassName('js-sky')
+
+     // if this one gets pressed...
+     this.el.addEventListener('click', e => {
+      sky.emit('go')
+     })
+   }
+})
+
 
 
 
